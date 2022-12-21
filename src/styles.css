@@ -1,0 +1,46 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+.container {
+  margin: 4rem auto 7rem;
+  text-align: center;
+}
+h1 {
+  color: tomato;
+}
+
+table {
+  border-radius: 1rem;
+  width: 50%;
+  text-align: justify;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th,
+td {
+  border: 2px solid tomato;
+  width: 0%;
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+
+input {
+  width: 100%;
+  max-width: 20rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-color: tomato;
+}
+
+button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.6rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: tomato;
+  color: white;
+}
