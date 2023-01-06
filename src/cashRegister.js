@@ -10,7 +10,7 @@ let CashRegister = () => {
   let numberOfNotes = [];
 
   let returnHandler = () => {
-    if (billAmount > 0 && cash > 0) {
+    if (billAmount > 0 && cash > 0 && cash > billAmount) {
       for (let i = 0; i < notesArray.length; i++) {
         let j = Math.trunc(amountToBeReturn / notesArray[i]);
 
