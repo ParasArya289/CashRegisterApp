@@ -6,10 +6,10 @@ let CashRegister = () => {
   let [err, setErr] = useState(""); //temp soluton: init state arr to resolve table rendering without td as program maps td and doesnt has html structure.
   let [numOfNotes, setNumOfNotes] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
   let notesArray = [2000, 500, 100, 50, 20, 10, 5, 1];
-  let amountToBeReturn = cash - billAmount;
   let numberOfNotes = [];
 
   let returnHandler = () => {
+    let amountToBeReturn = cash - billAmount;
     if (billAmount > 0 && cash > 0 && cash > billAmount) {
       for (let i = 0; i < notesArray.length; i++) {
         let j = Math.trunc(amountToBeReturn / notesArray[i]);
@@ -23,6 +23,7 @@ let CashRegister = () => {
       }
     } else {
       setErr("Enter proper value");
+      setNumOfNotes([0, 0, 0, 0, 0, 0, 0, 0]);
     }
   };
 
