@@ -3,6 +3,7 @@ import { useState } from "react";
 let CashRegister = () => {
   let [billAmount, setBillAmount] = useState(0);
   let [cash, setCash] = useState(0);
+  let [toBeReturn, setToBeReturn] = useState(0);
 
   let [err, setErr] = useState(""); //temp soluton: init state arr to resolve table rendering without td as program maps td and doesnt has html structure.
   let [numOfNotes, setNumOfNotes] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
@@ -13,6 +14,8 @@ let CashRegister = () => {
   let returnHandler = () => {
     let amountToBeReturn = cash - billAmount;
     if (cash && billAmount && cash > billAmount) {
+      setToBeReturn(amountToBeReturn);
+
       for (let i = 0; i < notesArray.length; i++) {
         let j = Math.trunc(amountToBeReturn / notesArray[i]);
 
@@ -26,6 +29,7 @@ let CashRegister = () => {
     } else {
       setErr("Enter proper value");
       setNumOfNotes([0, 0, 0, 0, 0, 0, 0, 0]);
+      setToBeReturn(0);
     }
   };
 
@@ -51,7 +55,9 @@ let CashRegister = () => {
       <h3>{err}</h3>
       {/* {cash > 0 && <h2>To be return: {amountToBeReturn} </h2>}
        */}
-      <h2>Return</h2>
+      <h2>
+        Return <u>₹{toBeReturn}</u>
+      </h2>
       <table>
         <tr>
           <th>Return</th>
