@@ -13,7 +13,7 @@ let CashRegister = () => {
 
   let returnHandler = () => {
     let amountToBeReturn = cash - billAmount;
-    if (cash && billAmount && cash > billAmount) {
+    if (cash > 0 && billAmount > 0 && cash > billAmount) {
       setToBeReturn(amountToBeReturn);
 
       for (let i = 0; i < notesArray.length; i++) {
